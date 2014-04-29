@@ -20,22 +20,19 @@
         {{outlet}}
     </script>
 
+    <script type="text/x-handlebars" data-template-name="item">
+      {{#each item in controller}}
+        <div class="item">
+          {{item.name}}
+        </div>
+      {{/each}}
+    </script>
+
     <script type="text/x-handlebars" data-template-name="table">
       <h2>Table {{tableNumber}}</h2>
         <div class="col-md-2" id="items">
          <h3>Items</h3>
-          <div class="item">
-            Artisan Gruel
-          </div>
-          <div class="item">
-            Ortolan
-          </div>
-          <div class="item">
-            Foie Gras
-          </div>
-          <div class="item">
-            Suckling Pig
-          </div>
+          {{render 'item'}}
         </div>
 
         <div class="col-md-6" id="infopane">
@@ -43,17 +40,10 @@
           {{#each item in this.items}}
             <p>{{item.name}}: ${{item.price}}</p>
           {{else}}
-            Whoops.
+            No items yet ordered at Table {{tableNumber}}.
           {{/each}}
         </div>
       </div>
-    </script>
-
-    <script type="text/x-handlebars" data-template-name="items">
-      Good afternoon.
-      // {{#each}}
-      //   {{name}}: ${{price}}
-      // {{/each}}
     </script>
 
 
@@ -67,5 +57,6 @@
     <script src="js/models/item.js"></script>
     <script src="js/controllers/tables_controller.js"></script>
     <script src="js/controllers/table_controller.js"></script>
+    <script src="js/controllers/item_controller.js"></script>
   </body>
 </html>

@@ -27,11 +27,11 @@ Gorgrly.Table.FIXTURES = [
   {
     id: 5,
     tableNumber: 5,
-    items: [6]
+    items: [4]
   },
   {
     id: 6,
     tableNumber: 6,
-    items: [7, 8, 9]
+    items: [2, 3, 4]
   }
 ]
