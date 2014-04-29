@@ -1,0 +1,44 @@
+h2 {
+  text-align:center;
+}
+
+#tables, #infopane, #items {
+  text-align: center;
+}
+
+#tables {
+  border-right-style: dotted;
+  border-color: gray;
+  border-width: 2px;
+}
+
+.item {
+  background-color: #bbbbbb;
+  float: left;
+  width: 80%;
+  margin: 5px;
+  font-size: 20px;
+  color: blue;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.item:hover {
+  background-color: #cccccc;
+}
+
+.table-button {
+  background-color: #bbbbbb;
+  float: left;
+  height: 75px;
+  width: 45%;
+  margin: 5px;
+  font-size: 50px;
+  color: blue;
+  border-radius: 3px;
+}
+
+.table-button:hover {
+  background-color: #cccccc;
+  font-style: underline;
+}

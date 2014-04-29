@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Gorgr.ly</title>
+    <link rel = "stylesheet" href="bootstrap.min.css">
+    <link rel = "stylesheet" href="styles.css">
+  </head>
+  <body>
+
+    <script type="text/x-handlebars" data-template-name="tables">
+      <div class="container">
+        <h1>Gorgr.ly</h1>
+        <div class="col-md-4" id="tables">
+          <h3 class="heading">Tables</h3>
+            {{#each itemController="table"}}
+              <div class="table-button">{{#link-to 'table' this}}{{tableNumber}}{{/link-to}}</div>
+            {{/each}}
+          <button {{action "createTable"}} class="btn btn-info">Add a Table</button>
+        </div>
+        {{outlet}}
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="table">
+      <h2>Table {{tableNumber}}</h2>
+        <div class="col-md-2" id="items">
+         <h3>Items</h3>
+          <div class="item">
+            Artisan Gruel
+          </div>
+          <div class="item">
+            Ortolan
+          </div>
+          <div class="item">
+            Foie Gras
+          </div>
+          <div class="item">
+            Suckling Pig
+          </div>
+        </div>
+
+        <div class="col-md-6" id="infopane">
+          <h3>Receipt</h3>
+          {{#each item in this.items}}
+            <p>{{item.name}}: ${{item.price}}</p>
+          {{else}}
+            Whoops.
+          {{/each}}
+        </div>
+      </div>
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="items">
+      Good afternoon.
+      // {{#each}}
+      //   {{name}}: ${{price}}
+      // {{/each}}
+    </script>
+
+
+    <script src="js/libs/jquery-1.10.2.min.js"></script>
+    <script src="js/libs/handlebars-1.0.0.js"></script>
+    <script src="js/libs/ember.js"></script>
+    <script src="js/libs/ember-data.js"></script>
+    <script src="js/application.js"></script>
+    <script src="js/router.js"></script>
+    <script src="js/models/table.js"></script>
+    <script src="js/models/item.js"></script>
+    <script src="js/controllers/tables_controller.js"></script>
+    <script src="js/controllers/table_controller.js"></script>
+  </body>
+</html>
